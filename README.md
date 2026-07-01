@@ -13,6 +13,8 @@ Official website for the BuildMC Launcher, built with Astro and deployed on GitH
 
 The site is deployed automatically via GitHub Actions to GitHub Pages.
 
+The BuildMC Launcher installer is distributed via GitHub Releases because of GitHub's file size limits on Pages repositories.
+
 ## Local Development
 
 ```bash
