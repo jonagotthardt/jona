@@ -43,7 +43,7 @@ if (fs.existsSync(downloadsDir)) {
       files.push({
         name: entry,
         size: formatBytes(stat.size),
-        url: `/downloads/${encodeURIComponent(entry)}`,
+        url: `./${encodeURIComponent(entry)}`,
         category: getCategory(entry),
       });
     }
@@ -73,7 +73,7 @@ const categories = ['Modpacks', 'Plugins & Mods', 'Resource Packs', 'Tools', 'Ot
                     <strong>BuildMC Launcher Installer</strong>
                     <span style="display: block; color: rgb(var(--gray)); font-size: 0.9rem;">Windows setup (MSI)</span>
                 </div>
-                <a href="/downloads/BuildMC%20Launcher_0.1.0_x64_en-US.msi" download>Download</a>
+                <a href="./BuildMC%20Launcher_0.1.0_x64_en-US.msi" download>Download</a>
             </div>
             <p style="color: rgb(var(--gray));">
                 The installer will be added here after the next build. If it is missing, check the latest release on GitHub.

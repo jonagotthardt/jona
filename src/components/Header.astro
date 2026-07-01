@@ -5,32 +5,32 @@ import { SITE_TITLE } from '../consts';
 
 <header>
   <nav>
-    <h2 class="logo"><a href="/">{SITE_TITLE}</a></h2>
+    <h2 class="logo"><a href="./">{SITE_TITLE}</a></h2>
 
     <!-- Normale Links für große Bildschirme -->
     <div class="internal-links">
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/downloads">Downloads</HeaderLink>
-      <HeaderLink href="/terms">Nutzungsbedingungen</HeaderLink>
-      <HeaderLink href="/privacy">Datenschutz</HeaderLink>
+      <HeaderLink href="./">Home</HeaderLink>
+      <HeaderLink href="./downloads">Downloads</HeaderLink>
+      <HeaderLink href="./terms">Nutzungsbedingungen</HeaderLink>
+      <HeaderLink href="./privacy">Datenschutz</HeaderLink>
     </div>
 
     <!-- Dropdown Menü für kleine Bildschirme -->
     <div class="menu-dropdown">
       <button class="menu-btn" aria-label="Menu">Menu ▾</button>
       <div class="menu-content">
-        <a href="/">Home</a>
-        <a href="/downloads">Downloads</a>
-        <a href="/terms">Nutzungsbedingungen</a>
-        <a href="/privacy">Datenschutz</a>
+        <a href="./">Home</a>
+        <a href="./downloads">Downloads</a>
+        <a href="./terms">Nutzungsbedingungen</a>
+        <a href="./privacy">Datenschutz</a>
       </div>
     </div>
 
     <!-- Sprachwechsel -->
     <div class="language-switch">
       <select onchange="location = this.value;">
-        <option value="/" selected>EN</option>
-        <option value="/de">DE</option>
+        <option value="./" selected>EN</option>
+        <option value="./de">DE</option>
       </select>
     </div>
 
