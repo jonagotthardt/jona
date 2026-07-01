@@ -10,8 +10,9 @@ import { SITE_TITLE } from '../consts';
     <!-- Normale Links für große Bildschirme -->
     <div class="internal-links">
       <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/blog">Minecraft</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
+      <HeaderLink href="/downloads">Downloads</HeaderLink>
+      <HeaderLink href="/terms">Nutzungsbedingungen</HeaderLink>
+      <HeaderLink href="/privacy">Datenschutz</HeaderLink>
     </div>
 
     <!-- Dropdown Menü für kleine Bildschirme -->
@@ -19,15 +20,16 @@ import { SITE_TITLE } from '../consts';
       <button class="menu-btn" aria-label="Menu">Menu ▾</button>
       <div class="menu-content">
         <a href="/">Home</a>
-        <a href="/blog">Minecraft</a>
-        <a href="/about">About</a>
+        <a href="/downloads">Downloads</a>
+        <a href="/terms">Nutzungsbedingungen</a>
+        <a href="/privacy">Datenschutz</a>
       </div>
     </div>
 
     <!-- Sprachwechsel -->
     <div class="language-switch">
       <select onchange="location = this.value;">
-        <option value="/en" selected>EN</option>
+        <option value="/" selected>EN</option>
         <option value="/de">DE</option>
       </select>
     </div>

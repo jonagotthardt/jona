@@ -1,0 +1,110 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import CookieBanner from '../../components/CookieBanner.astro';
+import fs from 'fs';
+import path from 'path';
+
+interface DownloadFile {
+  name: string;
+  size: string;
+  url: string;
+  category: string;
+}
+
+function formatBytes(bytes: number): string {
+  if (bytes === 0) return '0 B';
+  const k = 1024;
+  const sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+}
+
+function getCategory(filename: string): string {
+  const ext = path.extname(filename).toLowerCase();
+  if (ext === '.mrpack') return 'Modpacks';
+  if (ext === '.jar') return 'Plugins & Mods';
+  if (filename.toLowerCase().includes('resourcepack') || filename.toLowerCase().includes('watcherhorrorultimate')) return 'Resource Packs';
+  if (filename.toLowerCase().includes('installer') || ext === '.txt') return 'Tools';
+  return 'Other';
+}
+
+const downloadsDir = path.join(process.cwd(), 'public', 'downloads');
+const files: DownloadFile[] = [];
+
+if (fs.existsSync(downloadsDir)) {
+  const entries = fs.readdirSync(downloadsDir);
+  for (const entry of entries) {
+    const fullPath = path.join(downloadsDir, entry);
+    const stat = fs.statSync(fullPath);
+    if (stat.isFile()) {
+      files.push({
+        name: entry,
+        size: formatBytes(stat.size),
+        url: `/downloads/${encodeURIComponent(entry)}`,
+        category: getCategory(entry),
+      });
+    }
+  }
+}
+
+const categories = ['Modpacks', 'Plugins & Mods', 'Resource Packs', 'Tools', 'Other'];
+---
+
+<html lang="de">
+<head>
+    <BaseHead title={`Downloads - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+</head>
+<body>
+    <Header />
+
+    <main>
+        <section class="hero">
+            <h1>Downloads</h1>
+            <p>Lade den BuildMC Launcher herunter und stöbere durch zusätzliche Plugins, Modpacks und Resource Packs.</p>
+        </section>
+
+        <section>
+            <h2>BuildMC Launcher</h2>
+            <div class="download-item">
+                <div>
+                    <strong>BuildMC Launcher Installer</strong>
+                    <span style="display: block; color: rgb(var(--gray)); font-size: 0.9rem;">Windows Setup (MSI)</span>
+                </div>
+                <a href="/downloads/BuildMC%20Launcher_0.1.0_x64_en-US.msi" download>Herunterladen</a>
+            </div>
+            <p style="color: rgb(var(--gray));">
+                Der Installer wird hier nach dem nächsten Build hinzugefügt. Falls er fehlt, schaue auf GitHub nach der neuesten Version.
+            </p>
+        </section>
+
+        <section>
+            {categories.map((category) => {
+                const items = files.filter((f) => f.category === category);
+                if (items.length === 0) return null;
+                return (
+                    <div key={category}>
+                        <h2>{category}</h2>
+                        <div class="download-list">
+                            {items.map((file) => (
+                                <div class="download-item" key={file.name}>
+                                    <div>
+                                        <strong>{file.name}</strong>
+                                        <span style="display: block; color: rgb(var(--gray)); font-size: 0.9rem;">{file.size}</span>
+                                    </div>
+                                    <a href={file.url} download>Herunterladen</a>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                );
+            })}
+        </section>
+    </main>
+
+    <Footer />
+    <CookieBanner />
+</body>
+</html>

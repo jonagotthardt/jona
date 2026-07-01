@@ -1,0 +1,58 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE } from '../../consts';
+import CookieBanner from '../../components/CookieBanner.astro';
+---
+
+<html lang="de">
+<head>
+    <BaseHead title={`Nutzungsbedingungen - ${SITE_TITLE}`} description="Nutzungsbedingungen für den BuildMC Launcher und die Discord-App." />
+</head>
+<body>
+    <Header />
+
+    <main>
+        <section class="hero">
+            <h1>Nutzungsbedingungen</h1>
+            <p>Für den BuildMC Launcher und die zugehörige Discord-App.</p>
+        </section>
+
+        <section class="legal-page">
+            <h2>1. Geltungsbereich</h2>
+            <p>
+                Diese Nutzungsbedingungen gelten für den Download, die Installation und die Nutzung des BuildMC Launcher (im Folgenden „Software“) sowie der zugehörigen Discord Rich Presence App.
+            </p>
+
+            <h2>2. Lizenz</h2>
+            <p>
+                Der BuildMC Launcher wird kostenlos zur Verfügung gestellt. Du erhältst eine eingeschränkte, nicht-exklusive, nicht übertragbare Lizenz zur Nutzung der Software auf deinem eigenen Gerät.
+            </p>
+
+            <h2>3. Discord-App</h2>
+            <p>
+                Die Discord Rich Presence zeigt deinen Aktivitätsstatus in Discord an. Dazu wird eine Verbindung zum Discord-Client auf dem gleichen Gerät hergestellt. Es werden keine Daten an Discord oder Dritte übertragen, die über die von Discord selbst vorgesehene Rich Presence hinausgehen.
+            </p>
+
+            <h2>4. Verbotene Nutzung</h2>
+            <p>
+                Es ist nicht gestattet, die Software zu dekompilieren, zu modifizieren, zu verbreiten oder für illegale Zwecke zu nutzen. Du bist selbst für die Einhaltung der Minecraft- und Discord-Nutzungsbedingungen verantwortlich.
+            </p>
+
+            <h2>5. Haftungsausschluss</h2>
+            <p>
+                Die Software wird „wie besehen“ ohne Gewährleistung bereitgestellt. Der Entwickler haftet nicht für Schäden, die aus der Nutzung der Software entstehen, sofern nicht gesetzlich zwingend vorgeschrieben.
+            </p>
+
+            <h2>6. Änderungen</h2>
+            <p>
+                Diese Nutzungsbedingungen können jederzeit angepasst werden. Die jeweils aktuelle Version ist auf dieser Seite einsehbar.
+            </p>
+        </section>
+    </main>
+
+    <Footer />
+    <CookieBanner />
+</body>
+</html>

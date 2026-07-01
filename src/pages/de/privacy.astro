@@ -1,0 +1,70 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE } from '../../consts';
+import CookieBanner from '../../components/CookieBanner.astro';
+---
+
+<html lang="de">
+<head>
+    <BaseHead title={`Datenschutzerklärung - ${SITE_TITLE}`} description="Datenschutzerklärung für den BuildMC Launcher und die Discord-App." />
+</head>
+<body>
+    <Header />
+
+    <main>
+        <section class="hero">
+            <h1>Datenschutzerklärung</h1>
+            <p>Für den BuildMC Launcher und die zugehörige Discord-App.</p>
+        </section>
+
+        <section class="legal-page">
+            <h2>1. Verantwortlicher</h2>
+            <p>
+                Jona Gotthardt<br>
+                E-Mail: jona.gotthardt@icloud.com
+            </p>
+
+            <h2>2. Allgemeines</h2>
+            <p>
+                Der BuildMC Launcher ist eine Desktop-Anwendung für Minecraft. Datenschutz und Sicherheit haben für uns höchste Priorität. Diese Erklärung informiert dich über die Verarbeitung personenbezogener Daten.
+            </p>
+
+            <h2>3. Discord Rich Presence</h2>
+            <p>
+                Die Discord-App zeigt deinen Aktivitätsstatus (z.B. „BuildMC Launcher – Managing instances“) in Discord an. Dazu wird lokal eine Verbindung zum Discord-Client auf deinem Gerät hergestellt. Es werden keine personenbezogenen Daten über Discord oder unsere Server übertragen.
+            </p>
+
+            <h2>4. Gespeicherte Daten</h2>
+            <p>
+                Der Launcher speichert folgende Daten lokal auf deinem Gerät:
+            </p>
+            <ul>
+                <li>Minecraft-Account-Informationen (Microsoft-Tokens, optional)</li>
+                <li>Launcher-Einstellungen (RAM, Java-Pfad, Theme)</li>
+                <li>Installierte Instanzen und Mod-Listen</li>
+                <li>SwiftServers-Login-Daten (API-Key, lokal gespeichert)</li>
+            </ul>
+
+            <h2>5. Keine Weitergabe</h2>
+            <p>
+                Wir geben keine personenbezogenen Daten an Dritte weiter. Tokens werden ausschließlich zur Authentifizierung bei Microsoft- und Minecraft-Diensten verwendet.
+            </p>
+
+            <h2>6. Cookies & Website</h2>
+            <p>
+                Diese Website verwendet keine Tracking-Cookies. Bei der Nutzung der Hosting-Plattform (Cloudflare) können technische Daten wie IP-Adresse und Browserinformationen verarbeitet werden, um die Seite auszuliefern.
+            </p>
+
+            <h2>7. Rechte</h2>
+            <p>
+                Du hast das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung deiner Daten. Da die Daten lokal gespeichert werden, kannst du diese jederzeit direkt auf deinem Gerät löschen.
+            </p>
+        </section>
+    </main>
+
+    <Footer />
+    <CookieBanner />
+</body>
+</html>

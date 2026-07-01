@@ -1,0 +1,58 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+import CookieBanner from '../components/CookieBanner.astro';
+---
+
+<html lang="en">
+<head>
+    <BaseHead title={`Terms of Use - ${SITE_TITLE}`} description="Terms of use for the BuildMC Launcher and Discord app." />
+</head>
+<body>
+    <Header />
+
+    <main>
+        <section class="hero">
+            <h1>Terms of Use</h1>
+            <p>For the BuildMC Launcher and the associated Discord app.</p>
+        </section>
+
+        <section class="legal-page">
+            <h2>1. Scope</h2>
+            <p>
+                These terms apply to downloading, installing, and using the BuildMC Launcher (the "Software") and its associated Discord Rich Presence app.
+            </p>
+
+            <h2>2. License</h2>
+            <p>
+                The BuildMC Launcher is provided free of charge. You receive a limited, non-exclusive, non-transferable license to use the Software on your own device.
+            </p>
+
+            <h2>3. Discord App</h2>
+            <p>
+                Discord Rich Presence displays your activity status in Discord. It connects to the Discord client on the same device. No data beyond Discord's own Rich Presence functionality is transmitted to Discord or third parties.
+            </p>
+
+            <h2>4. Prohibited Use</h2>
+            <p>
+                You may not decompile, modify, redistribute, or use the Software for illegal purposes. You are responsible for complying with the Minecraft and Discord terms of service.
+            </p>
+
+            <h2>5. Disclaimer</h2>
+            <p>
+                The Software is provided "as is" without warranty. The developer is not liable for damages arising from the use of the Software unless required by law.
+            </p>
+
+            <h2>6. Changes</h2>
+            <p>
+                These terms may be updated at any time. The current version is always available on this page.
+            </p>
+        </section>
+    </main>
+
+    <Footer />
+    <CookieBanner />
+</body>
+</html>

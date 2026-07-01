@@ -1,0 +1,70 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+import CookieBanner from '../components/CookieBanner.astro';
+---
+
+<html lang="en">
+<head>
+    <BaseHead title={`Privacy Policy - ${SITE_TITLE}`} description="Privacy policy for the BuildMC Launcher and Discord app." />
+</head>
+<body>
+    <Header />
+
+    <main>
+        <section class="hero">
+            <h1>Privacy Policy</h1>
+            <p>For the BuildMC Launcher and the associated Discord app.</p>
+        </section>
+
+        <section class="legal-page">
+            <h2>1. Responsible Party</h2>
+            <p>
+                Jona Gotthardt<br>
+                Email: jona.gotthardt@icloud.com
+            </p>
+
+            <h2>2. General</h2>
+            <p>
+                BuildMC Launcher is a desktop application for Minecraft. Privacy and security are our top priorities. This policy explains how personal data is handled.
+            </p>
+
+            <h2>3. Discord Rich Presence</h2>
+            <p>
+                The Discord app displays your activity status (e.g., "BuildMC Launcher – Managing instances") in Discord. It connects locally to the Discord client on your device. No personal data is transmitted via Discord or our servers.
+            </p>
+
+            <h2>4. Stored Data</h2>
+            <p>
+                The launcher stores the following data locally on your device:
+            </p>
+            <ul>
+                <li>Minecraft account information (Microsoft tokens, optional)</li>
+                <li>Launcher settings (RAM, Java path, theme)</li>
+                <li>Installed instances and mod lists</li>
+                <li>SwiftServers login data (API key, stored locally)</li>
+            </ul>
+
+            <h2>5. No Data Sharing</h2>
+            <p>
+                We do not share personal data with third parties. Tokens are used solely for authentication with Microsoft and Minecraft services.
+            </p>
+
+            <h2>6. Cookies & Website</h2>
+            <p>
+                This website does not use tracking cookies. When using the hosting platform (Cloudflare), technical data such as IP address and browser information may be processed to deliver the site.
+            </p>
+
+            <h2>7. Your Rights</h2>
+            <p>
+                You have the right to access, rectify, erase, and restrict processing of your data. Since data is stored locally, you can delete it directly on your device at any time.
+            </p>
+        </section>
+    </main>
+
+    <Footer />
+    <CookieBanner />
+</body>
+</html>
