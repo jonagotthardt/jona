@@ -6,7 +6,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://jonagotthardt.github.io",
-  base: "/astro-blog-starter-template/",
+  base: "/jona/",
   integrations: [mdx(), sitemap()],
   output: "static",
 });
